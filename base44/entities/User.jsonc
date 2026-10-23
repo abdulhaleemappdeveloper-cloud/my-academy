@@ -21,12 +21,12 @@
         "owner"
       ],
       "rls": {
-        "update": {
-          "user_condition": {
-            "collaborator_role": "editor"
-          }
-        }
-      }
+            "update": {
+            "user_condition": {
+            "role": "admin"
+                  }
+            }
+          } 
     }
   },
   "required": [
