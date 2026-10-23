@@ -17,3 +17,10 @@
   for = "/assets/*.js"
   [headers.values]
     Content-Type = "text/javascript; charset=utf-8"
+
+# React Router handles routing in the browser, so serve index.html for any
+# path that isn't a real file (otherwise deep links and refreshes 404).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
