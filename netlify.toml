@@ -3,6 +3,11 @@
   command = "npx base44 build"
   publish = "dist"
 
+# The Base44 app this site belongs to. `base44 build` reads it to inject the app
+# id, since base44/.app.jsonc (written by `base44 link`) is gitignored.
+[build.environment]
+  BASE44_APP_ID = "6ad84692ebac5a469373d0ee"
+
 [[headers]]
   for = "/*.js"
   [headers.values]
@@ -12,3 +17,10 @@
   for = "/assets/*.js"
   [headers.values]
     Content-Type = "text/javascript; charset=utf-8"
+
+# React Router handles routing in the browser, so serve index.html for any
+# path that isn't a real file (otherwise deep links and refreshes 404).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
