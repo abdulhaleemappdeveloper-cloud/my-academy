@@ -1,6 +1,6 @@
 
 [build]
-  command = "npx base44 build"
+  command = "npm run build"
   publish = "dist"
 
 [[headers]]
@@ -12,3 +12,8 @@
   for = "/assets/*.js"
   [headers.values]
     Content-Type = "text/javascript; charset=utf-8"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
